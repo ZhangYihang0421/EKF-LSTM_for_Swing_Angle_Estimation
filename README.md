@@ -7,9 +7,8 @@ This repository contains the training dataset generation tools and model trainin
 ## Directory Structure
 
 - `data/`: Contains the raw flight logs (CSV) used to generate training sequences.
-    - `slung_load_dataset.csv`
-    - `slung_load_dataset_small.csv`
-    - `slung_load_dataset_slowbig.csv`
+    - `slung_load_angle_dataset_train.csv`: Merged training dataset.
+    - `slung_load_angle_dataset_test.csv`: Test dataset for evaluation.
 - `src/`: Contains the source code.
     - `generate_sequence_data.py`: Script to process CSVs into a format suitable for LSTM training.
     - `train_lstm.py`: Script to train the LSTM model.

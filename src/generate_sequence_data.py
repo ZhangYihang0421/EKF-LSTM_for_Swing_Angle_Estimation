@@ -16,9 +16,7 @@ def generate_sequence_data():
     
     # List of CSV files to process (Matching EKF_ResNet/TCN)
     csv_filenames = [
-        'slung_load_dataset.csv',
-        'slung_load_dataset_small.csv',
-        'slung_load_dataset_slowbig.csv'
+        'slung_load_angle_dataset_train.csv',
     ]
     
     save_path = os.path.join(data_dir, 'lstm_correction_data.pth')
