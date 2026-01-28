@@ -14,6 +14,12 @@ This repository contains the training dataset generation tools and model trainin
     - `train_lstm.py`: Script to train the LSTM model.
     - `lstm_model.py`: PyTorch model definition.
     - `SlungLoadEKF.py`: EKF implementation used for generating ground truth/error signals.
+- `simulation/`: Contains Gazebo simulation files.
+    - `launch/`: ROS launch files.
+    - `models/`: Custom Gazebo models (e.g., `iris_slung_load`).
+- `scripts/`: Utility scripts.
+    - `collect_data.py`: Script to collect training data from the simulation.
+
 
 ## Prerequisites
 
@@ -48,3 +54,18 @@ python train_lstm.py
 ```
 
 This will save the trained model checkpoint to `data/lstm_correction.pth`.
+
+### 3. Run Simulation & Data Collection
+
+To run the simulation with the custom slung load model:
+
+1.  **Environment Setup**: Ensure PX4 Firmware and Gazebo are properly installed and configured.
+2.  **Add Model**: Ensure `simulation/models/iris_slung_load` is in your `GAZEBO_MODEL_PATH`.
+3.  **Launch Simulation**:
+    ```bash
+    roslaunch simulation/launch/mavros_iris_slung_load.launch
+    ```
+4.  **Collect Data**:
+    ```bash
+    python scripts/collect_data.py
+    ```
