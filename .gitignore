@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pth
+.DS_Store
+data/*.pth
+data/lstm_correction_data.pth
+data/lstm_correction.pth
